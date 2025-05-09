@@ -1,133 +1,163 @@
+```
+html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Soapberry Cleaning Services</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
   <style>
     body {
+      font-family: 'Nunito', sans-serif;
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #fffdfb;
-      color: #3e3e3e;
+      padding: 0;
+      background-color: #fff;
+      color: #333;
     }
     header {
-      background: #f9f0f2;
-      color: #5a2a3b;
+      background-color: #e7f0e6;
       padding: 2rem;
       text-align: center;
     }
-    nav {
-      text-align: center;
-      padding: 1rem;
-      background: #fff3f5;
+    h1 {
+      margin: 0;
+      color: #62846d;
     }
-    nav a {
-      margin: 0 15px;
-      color: #8e3a53;
-      text-decoration: none;
-      font-weight: bold;
+    h2 {
+      color: #cc8474;
     }
     section {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
     }
-    .services, .contact, .booking {
-      background: #fcecef;
-      margin-top: 2rem;
+    .cta {
+      background-color: #fbe7e2;
       padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-    footer {
-      background: #5a2a3b;
-      color: white;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      color: #5d574f;
     }
-    button {
-      background: #8e3a53;
+    .form-section label {
+      display: block;
+      margin: 0.5rem 0 0.2rem;
+    }
+    .form-section input, .form-section select, .form-section textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .form-section button {
+      background-color: #cc8474;
       color: white;
-      padding: 10px 20px;
       border: none;
-      border-radius: 4px;
-      font-size: 1rem;
+      padding: 1rem;
       cursor: pointer;
     }
-    button:hover {
-      background: #732d44;
+    .faq, .guarantee, .services, .map {
+      background-color: #f7f7f7;
+      margin: 2rem 0;
+      padding: 1rem 2rem;
     }
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 1rem;
+    .room-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
     }
-    form label {
-      font-weight: bold;
-      margin-top: 1rem;
-      display: block;
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #e7f0e6;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Soapberry Cleaning Services</h1>
-    <p>Fresh. Gentle. Clean — Just Like Nature.</p>
+    <h2>Thorough Natural Clean</h2>
   </header>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-    <a href="#booking">Book</a>
-  </nav>
-  <section id="about">
-    <h2>About Us</h2>
-    <p>Soapberry Cleaning Services brings warm, nature-inspired care into every home. Serving Wichita and surrounding areas, we combine eco-conscious practices with attention to detail that leaves homes feeling fresh and renewed.</p>
+
+  <section class="cta">
+    <h2>💸 Request a Free Quote & Get $50 Off Your First Cleaning!</h2>
+    <p>Fill out the form below and we’ll respond within 24 hours.</p>
   </section>
-  <section class="services" id="services">
-    <h2>Our Services</h2>
-    <ul>
-      <li>One-Time Deep Cleaning</li>
-      <li>Weekly & Biweekly Cleaning</li>
-      <li>Move-In / Move-Out Cleaning</li>
-      <li>Eco-Friendly Product Use</li>
-    </ul>
-  </section>
-  <section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: info@soapberryks.com</p>
-    <p>Phone: (316) 555-1234</p>
-    <p>Service Area: Within 75 miles of Wichita, KS</p>
-  </section>
-  <section class="booking" id="booking">
-    <h2>Book a Cleaning</h2>
+
+  <section class="form-section">
     <form action="https://formspree.io/f/xdkgzgby" method="POST">
-      <label for="name">Full Name:</label>
-      <input type="text" id="name" name="name" required />
+      <label for="name">Full Name</label>
+      <input type="text" name="name" required />
 
-      <label for="email">Email Address:</label>
-      <input type="email" id="email" name="email" required />
+      <label for="email">Email Address</label>
+      <input type="email" name="email" required />
 
-      <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" name="phone" required />
+      <label for="phone">Phone Number</label>
+      <input type="tel" name="phone" />
 
-      <label for="service">Type of Service:</label>
-      <input type="text" id="service" name="service" placeholder="e.g. Deep clean, weekly, move-out" required />
+      <label for="contact">Preferred Contact Method</label>
+      <select name="contact">
+        <option value="Email">Email</option>
+        <option value="Phone">Phone</option>
+        <option value="Either">Either</option>
+      </select>
 
-      <label for="message">Additional Details:</label>
-      <textarea id="message" name="message" rows="4"></textarea>
+      <label for="address">Service Location Address</label>
+      <input type="text" name="address" />
 
-      <br><br>
-      <button type="submit">Submit Booking</button>
+      <label for="services">Type of Cleaning Service</label>
+      <select name="services[]" multiple>
+        <option>Residential Cleaning</option>
+        <option>Rural Property Cleaning</option>
+        <option>Apartment Turnover</option>
+        <option>Office Cleaning</option>
+        <option>Retail Store Cleaning</option>
+        <option>Move-In / Move-Out Cleaning</option>
+        <option>Add-On Services</option>
+      </select>
+
+      <label for="availability">Requested Date or Availability Window</label>
+      <input type="text" name="availability" />
+
+      <label for="notes">Additional Notes</label>
+      <textarea name="notes" rows="4"></textarea>
+
+      <button type="submit">Request My Free Quote</button>
     </form>
   </section>
+
+  <section class="services">
+    <h2>What We Clean</h2>
+    <div class="room-grid">
+      <div><strong>Kitchen</strong><br/>Counters, appliances, sink, floors, trash, surfaces</div>
+      <div><strong>Bathroom</strong><br/>Toilets, showers, mirrors, sinks, tile, trash</div>
+      <div><strong>Living Room</strong><br/>Vacuuming, dusting, windowsills, electronics, floors</div>
+      <div><strong>Bedroom</strong><br/>Linens, dusting, baseboards, floors</div>
+      <div><strong>Office</strong><br/>Desks, electronics, waste bins, floors</div>
+    </div>
+  </section>
+
+  <section class="guarantee">
+    <h2>Our Customer Guarantee</h2>
+    <p>At Soapberry, we clean every room using our <strong>Merit Meter Checklist</strong> — a 50-point system designed to ensure every space is cleaned thoroughly and consistently.</p>
+    <p>If you believe we’ve missed a key task or didn’t meet your expectations, just let us know. We’ll return <strong>within 24 hours</strong> to make it right — no questions asked.</p>
+  </section>
+
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <p><strong>Q: Do I need to supply anything?</strong><br/>A: Nope! We bring all eco-friendly supplies and equipment needed for your clean.</p>
+    <p><strong>Q: What if I’m not satisfied?</strong><br/>A: Let us know within 24 hours and we’ll return to address any concerns, no questions asked.</p>
+    <p><strong>Q: How should I prepare for my cleaning?</strong><br/>A: Clear surfaces of clutter and secure valuables and pets. That’s it!</p>
+    <p><strong>Q: Can I reschedule?</strong><br/>A: Absolutely. We ask for at least 24 hours’ notice to avoid cancellation fees.</p>
+  </section>
+
+  <section class="map">
+    <h2>Our Service Area</h2>
+    <p>We proudly serve homes and businesses within a <strong>75-mile radius of Goddard, KS (ZIP 67052)</strong>.</p>
+    <!-- Embed or link to a custom Google Map if desired -->
+  </section>
+
   <footer>
-    <p>&copy; 2025 Soapberry Cleaning Services. All rights reserved.</p>
+    &copy; 2025 Soapberry Cleaning Services • info@soapberryks.com
   </footer>
 </body>
 </html>
